@@ -13,6 +13,7 @@ resource "azurerm_storage_account" "stor" {
   resource_group_name      = "${azurerm_resource_group.rg.name}"
   account_tier             = "${var.storage_account_tier}"
   account_replication_type = "${var.storage_replication_type}"
+  allow_nested_items_to_be_public = false
 }
 
 resource "azurerm_storage_account" "stor1" {
@@ -21,6 +22,7 @@ resource "azurerm_storage_account" "stor1" {
   resource_group_name      = "${azurerm_resource_group.rg.name}"
   account_tier             = "${var.storage_account_tier}"
   account_replication_type = "${var.storage_replication_type}"
+  allow_nested_items_to_be_public = false
 }
 
 resource "azurerm_storage_account" "stor2" {
@@ -29,5 +31,5 @@ resource "azurerm_storage_account" "stor2" {
   resource_group_name      = "${azurerm_resource_group.rg.name}"
   account_tier             = "${var.storage_account_tier}"
   account_replication_type = "${var.storage_replication_type}"
-  public_network_access_enabled = false  # Disables public access
+  allow_nested_items_to_be_public = false  # Disables public access
 }
